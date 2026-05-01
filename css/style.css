@@ -258,6 +258,7 @@ h3 {
   min-height: 560px;
   overflow: hidden;
   border-radius: 28px;
+  background: var(--color-cream-2);
   box-shadow: var(--shadow-deep);
 }
 
@@ -793,10 +794,55 @@ textarea:focus {
 }
 
 @media (max-width: 1023px) {
+  .hero-bg {
+    background-size: cover, contain;
+    background-position: center, center bottom;
+    background-repeat: no-repeat;
+  }
+
+  .page-hero {
+    background-size: contain !important;
+    background-position: center bottom !important;
+    background-repeat: no-repeat !important;
+    background-color: var(--color-dark) !important;
+  }
+
   .split,
   .contact-layout,
   .process-step {
     grid-template-columns: 1fr;
+  }
+
+  .image-frame {
+    min-height: 0;
+  }
+
+  .image-frame img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+  }
+
+  .product-image,
+  .process-photo {
+    background: var(--color-cream-2);
+  }
+
+  .product-image img {
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  .process-photo img {
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .product-card:hover .product-image img,
+  .process-step:hover img {
+    transform: none;
   }
 
   .product-grid,
@@ -874,7 +920,7 @@ textarea:focus {
   }
 
   .image-frame {
-    min-height: 380px;
+    min-height: 0;
   }
 
   .section-intro {
