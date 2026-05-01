@@ -1,0 +1,92 @@
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes wordRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceChevron {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate(-50%, 0) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 12px) rotate(45deg);
+  }
+}
+
+@keyframes slideNav {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal,
+.reveal-left,
+.reveal-right {
+  transition-delay: var(--delay, 0ms);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .hero h1 span {
+    opacity: 1;
+    transform: none;
+  }
+}
