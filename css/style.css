@@ -882,9 +882,15 @@ textarea:focus {
     position: relative;
     inset: auto;
     z-index: 0;
+    width: calc(100% + 10%);
     min-height: 42vh;
     margin: -18px -5% 28px;
     order: -1;
+    background-image: url("../assets/hero/hero-image.jpeg") !important;
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: var(--color-dark);
     border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   }
 
