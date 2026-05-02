@@ -338,6 +338,82 @@ h3 {
   background: var(--color-cream-2);
 }
 
+.product-variant-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  background: linear-gradient(135deg, #fff, var(--color-cream));
+}
+
+.product-variant-images figure {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  text-align: center;
+}
+
+.product-variant-images img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+.product-variant-images figcaption {
+  color: var(--color-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-variant-toggle {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  background: linear-gradient(135deg, #fff, var(--color-cream));
+  text-align: center;
+}
+
+.product-variant-toggle img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  transition: opacity 0.2s ease, transform 0.45s ease;
+}
+
+.variant-controls {
+  display: inline-flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: white;
+}
+
+.variant-btn {
+  min-height: 38px;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font: 700 0.82rem var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.variant-btn.active,
+.variant-btn:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
 .product-image img {
   width: 100%;
   height: 100%;
@@ -346,6 +422,8 @@ h3 {
 }
 
 .product-card:hover .product-image img,
+.product-card:hover .product-variant-images img,
+.product-card:hover .product-variant-toggle img,
 .process-step:hover img {
   transform: scale(1.05);
 }
@@ -836,6 +914,15 @@ textarea:focus {
     padding: 10px;
   }
 
+  .product-variant-images img {
+    height: 190px;
+    object-fit: contain;
+  }
+
+  .product-variant-toggle img {
+    height: 220px;
+  }
+
   .process-photo img {
     height: auto;
     aspect-ratio: auto;
@@ -843,6 +930,8 @@ textarea:focus {
   }
 
   .product-card:hover .product-image img,
+  .product-card:hover .product-variant-images img,
+  .product-card:hover .product-variant-toggle img,
   .process-step:hover img {
     transform: none;
   }
@@ -936,6 +1025,27 @@ textarea:focus {
   .contact-trust-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-variant-images {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .product-variant-images img {
+    height: 170px;
+  }
+
+  .product-variant-toggle img {
+    height: 230px;
+  }
+
+  .variant-controls {
+    width: 100%;
+  }
+
+  .variant-btn {
+    flex: 1;
   }
 
   .stat:not(:last-child)::after {

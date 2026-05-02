@@ -72,3 +72,27 @@ filterTabs.forEach((tab) => {
     });
   });
 });
+
+document.querySelectorAll("[data-product-variant]").forEach((variant) => {
+  const image = variant.querySelector("[data-variant-image]");
+  const buttons = variant.querySelectorAll("[data-variant-src]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!image) return;
+
+      image.style.opacity = "0";
+      window.setTimeout(() => {
+        image.src = button.dataset.variantSrc;
+        image.alt = button.dataset.variantAlt;
+        image.style.opacity = "1";
+      }, 120);
+
+      buttons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+    });
+  });
+});
